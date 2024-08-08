@@ -7,10 +7,9 @@ const Graph = ({ renderGraph }) => {
     useEffect(() => {
         const mountTimer = setTimeout(() => {
             setMounted(true);
-            const renderTimer = setTimeout(() => {
-                const cleanupRender = renderGraph();
 
-                return cleanupRender;
+            const renderTimer = setTimeout(() => {
+                renderGraph();
             }, 1000);
 
             return () => clearTimeout(renderTimer);
